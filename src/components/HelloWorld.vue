@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 v-on:click="hover" >{{ msg }}</h1>
   </div>
 </template>
 
@@ -9,6 +9,11 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String,
+  },
+  methods: {
+    hover: function() {
+      this.msg += ' Makeev';
+    },
   },
 };
 </script>
