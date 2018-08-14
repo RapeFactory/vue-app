@@ -1,7 +1,7 @@
 <template>
   <div>
   <input v-model="message" type="text">
-  <div v-on="message">{{ message }}</div>
+  <h1 v-on="message">{{ message }}</h1>
   </div>
 </template>
 
@@ -16,5 +16,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+input {
+  width: 200px;
+  height: 30px;
+  font-size: 25px;
+  text-align: center;
+}
 </style>
