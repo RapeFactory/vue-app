@@ -23,7 +23,7 @@ export default {
 div {
   background: lemonchiffon;
   animation-name: anim;
-  animation-duration: 5s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: ease;
 
