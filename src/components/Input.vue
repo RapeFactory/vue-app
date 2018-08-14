@@ -1,7 +1,7 @@
 <template>
   <div>
   <input v-model="message" type="text">
-  <h1 v-on="message">{{ message }}</h1>
+  <h1>{{ message }}</h1>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   name: 'Input',
   data: function() {
     return {
-      message: 'Вводи',
+      message: 'message',
     };
   },
 };
@@ -18,7 +18,7 @@ export default {
 
 <style scoped>
 input {
-  width: 200px;
+  width: 20%;
   height: 30px;
   font-size: 25px;
   text-align: center;
