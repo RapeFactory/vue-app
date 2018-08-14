@@ -2,6 +2,7 @@
   <div>
   <input v-model="message" type="text">
   <h1>{{ message }}</h1>
+  <h1>{{ reversedMessage }}</h1>
   </div>
 </template>
 
@@ -12,6 +13,16 @@ export default {
     return {
       message: 'message',
     };
+  },
+  computed: {
+    // геттер вычисляемого значения
+    reversedMessage: function() {
+      // `this` указывает на экземпляр vm
+      return this.message
+        .split('')
+        .reverse()
+        .join('');
+    },
   },
 };
 </script>
