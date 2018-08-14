@@ -1,6 +1,6 @@
 <template>
   <div>
-  <input v-bind:class="{colored: isColored}" v-model="message" @input="colorise" type="text">
+  <input class="input" v-bind:class="{colored: isColored}" v-model="message" @input="colorise" type="text">
   <h1>{{ message }}</h1>
   <h1>{{ reversedMessage }}</h1>
   </div>
@@ -38,11 +38,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-input {
+.input {
   width: 20%;
   height: 30px;
   font-size: 25px;
   text-align: center;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 .colored {
   background-color: lemonchiffon;
