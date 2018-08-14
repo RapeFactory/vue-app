@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 v-on:click="hover" >{{ msg }}</h1>
+    <h1 @click="hover" >{{ msg }}</h1>
   </div>
 </template>
 
