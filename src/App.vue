@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <hello-world msg="Vue.js App"/>
-    <my-input />
+    <hello-world v-bind:msg="greeting"/>
+    <my-input v-bind:message="message"/>
   </div>
 </template>
 
@@ -15,6 +15,12 @@ export default {
   components: {
     'hello-world': HelloWorld,
     'my-input': Input,
+  },
+  data: function() {
+    return {
+      greeting: 'Vue.js App',
+      message: 'Hi, input text here!'
+    };
   },
 };
 </script>

@@ -1,25 +1,29 @@
 <template>
   <div>
-    <input class="input" :class="{colored: isColored}" @input="colorise" v-model="message" type="text">
-  <h1>{{ message }}</h1>
-  <h1>{{ reversedMessage }}</h1>
+    <input class="input" :class="{colored: isColored}" @input="colorise" v-model="value" type="text">
+    <h1>{{ value }}</h1>
+    <h1>{{ reversedValue }}</h1>
   </div>
 </template>
 
 <script>
 export default {
   name: 'my-input',
+  props: {
+    message: {
+      type: String,
+      required: true,
+    },
+  },
   data: function() {
     return {
-      message: 'message',
       isColored: false,
+      value: this.message,
     };
   },
   computed: {
-    // геттер вычисляемого значения
-    reversedMessage: function() {
-      // `this` указывает на экземпляр vm
-      return this.message
+    reversedValue: function() {
+      return this.value
         .split('')
         .reverse()
         .join('');
@@ -27,7 +31,7 @@ export default {
   },
   methods: {
     colorise: function() {
-      this.isColored = this.message.length >= 10;
+      this.isColored = this.value.length >= 10;
     },
   },
 };
