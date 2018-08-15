@@ -1,6 +1,6 @@
 <template>
   <div>
-  <input class="input" v-bind:class="{colored: isColored}" v-model="message" @input="colorise" type="text">
+    <input class="input" :class="{colored: isColored}" @input="colorise" v-model="message" type="text">
   <h1>{{ message }}</h1>
   <h1>{{ reversedMessage }}</h1>
   </div>
@@ -27,11 +27,7 @@ export default {
   },
   methods: {
     colorise: function() {
-      if (this.message.length > 10) {
-        this.isColored = true;
-      } else {
-        this.isColored = false;
-      }
+      this.isColored = this.message.length >= 10;
     },
   },
 };

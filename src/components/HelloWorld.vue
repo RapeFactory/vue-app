@@ -20,7 +20,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div {
+.hello {
   background: lemonchiffon;
   animation-name: anim;
   animation-duration: 10s;
