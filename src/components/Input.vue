@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'Input',
+  name: 'my-input',
   data: function() {
     return {
       message: 'message',

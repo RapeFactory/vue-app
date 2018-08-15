@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld msg="Vue.js App"/>
-    <Input />
+    <hello-world msg="Vue.js App"/>
+    <my-input />
   </div>
 </template>
 
@@ -13,8 +13,8 @@ import Input from './components/Input.vue';
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    Input,
+    'hello-world': HelloWorld,
+    'my-input': Input,
   },
 };
 </script>
