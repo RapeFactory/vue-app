@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 @click="hover" >{{ msg }}</h1>
+    <h1 @click="click" >{{ greeting }}</h1>
   </div>
 </template>
 
@@ -8,11 +8,14 @@
 export default {
   name: 'hello-world',
   props: {
-    msg: String,
+    greeting: {
+      type: String,
+      required: true,
+    },
   },
   methods: {
-    hover: function() {
-      this.msg += ' Makeev';
+    click() {
+      this.$emit('click');
     },
   },
 };

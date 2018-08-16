@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <hello-world v-bind:msg="greeting"/>
-    <my-input v-bind:message="message"/>
+    <hello-world @click="changeMessage" :greeting="greeting"/>
+    <my-input @message-saved="onInput" :message="message"/>
   </div>
 </template>
 
