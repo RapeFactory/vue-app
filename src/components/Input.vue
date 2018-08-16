@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input class="input" :class="{colored: isColored}" @input="colorise" v-model="value" type="text">
+    <input class="input" :class="{colored: isColored}" @keyup.enter="onEnter" @input="onInput" v-model="value" type="text">
     <h1>{{ value }}</h1>
     <h1>{{ reversedValue }}</h1>
   </div>
@@ -15,14 +15,14 @@ export default {
       required: true,
     },
   },
-  data: function() {
+  data() {
     return {
       isColored: false,
       value: this.message,
     };
   },
   computed: {
-    reversedValue: function() {
+    reversedValue() {
       return this.value
         .split('')
         .reverse()
@@ -30,8 +30,11 @@ export default {
     },
   },
   methods: {
-    colorise: function() {
+    onInput() {
       this.isColored = this.value.length >= 10;
+    },
+    onEnter() {
+      this.$emit('message-saved', this.value);
     },
   },
 };

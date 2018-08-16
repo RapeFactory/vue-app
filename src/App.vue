@@ -16,11 +16,19 @@ export default {
     'hello-world': HelloWorld,
     'my-input': Input,
   },
-  data: function() {
+  data() {
     return {
       greeting: 'Vue.js App',
-      message: 'Hi, input text here!'
+      message: 'Hi, input text here!',
     };
+  },
+  methods: {
+    changeMessage() {
+      this.message = this.greeting;
+    },
+    onInput(value) {
+      this.greeting = value;
+    },
   },
 };
 </script>
