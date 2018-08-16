@@ -1,9 +1,13 @@
 <template>
-  <div>
-    <input class="input" :class="{colored: isColored}" @keyup.enter="onEnter" @input="onInput" v-model="value" type="text">
-    <h1>{{ value }}</h1>
-    <h1>{{ reversedValue }}</h1>
-  </div>
+  <transition name="run">
+    <div class="root" v-if="visible">
+      <input class="input" :class="{colored: isColored}" @keyup.enter="onEnter" @input="onInput" v-model="value" type="text">
+      <h1>{{ value }}</h1>
+      <transition name="fade">
+        <h1 v-if="isColored">{{ reversedValue }}</h1>
+      </transition>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -12,6 +16,10 @@ export default {
   props: {
     message: {
       type: String,
+      required: true,
+    },
+    visible: {
+      type: Boolean,
       required: true,
     },
   },
@@ -41,6 +49,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.root {
+  position: relative;
+  left: 0%;
+}
 .input {
   width: 20%;
   height: 30px;
@@ -52,5 +64,24 @@ export default {
 }
 .colored {
   background-color: lemonchiffon;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.run-enter {
+  left: -60%;
+}
+.run-leave-to {
+  left: 60%;
+}
+.run-leave-active,
+.run-enter-active {
+  transition: all 0.5s ease;
 }
 </style>

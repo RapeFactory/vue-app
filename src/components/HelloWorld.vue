@@ -33,6 +33,7 @@ export default {
   width: 20%;
   margin-right: 60%;
   margin-left: 40%;
+  border-radius: 10px;
 }
 
 @keyframes anim {

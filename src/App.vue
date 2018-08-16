@@ -2,7 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <hello-world @click="changeMessage" :greeting="greeting"/>
-    <my-input @message-saved="onInput" :message="message"/>
+    <my-input @message-saved="onInput" :visible="visible" :message="message"/>
   </div>
 </template>
 
@@ -19,12 +19,13 @@ export default {
   data() {
     return {
       greeting: 'Vue.js App',
-      message: 'Hi, input text here!',
+      message: 'Text here!',
+      visible: true,
     };
   },
   methods: {
     changeMessage() {
-      this.message = this.greeting;
+      this.visible = !this.visible;
     },
     onInput(value) {
       this.greeting = value;
